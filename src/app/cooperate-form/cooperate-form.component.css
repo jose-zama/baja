@@ -1,27 +1,24 @@
-.full-width {
-  width: 100%;
+.cooperate-form {
+    margin: 20px;
 }
 
-.shipping-card {
-  min-width: 120px;
-  margin: 20px auto;
+.mat-stepper-horizontal {
+    width: auto;
+    display: block;
 }
 
-.mat-radio-button {
-  display: block;
-  margin: 5px 0;
+.equipment-detail-description {
+    text-align: center;
 }
 
-.row {
-  display: flex;
-  flex-direction: row;
+.equipment-detail-description img {
+    max-width: 600px;
 }
 
-.col {
-  flex: 1;
-  margin-right: 20px;
+.cooperate-form form .form-controls {
+    text-align: right;
 }
 
-.col:last-child {
-  margin-right: 0;
+.cooperate-form-funding-progress {
+    margin: 10px 0;
 }

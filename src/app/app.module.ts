@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatDividerModule,MatCardModule,MatButtonModule,MatListModule,MatToolbarModule, MatSidenavModule, MatIconModule, MatGridListModule, MatMenuModule, MatInputModule, MatSelectModule, MatRadioModule} from '@angular/material';
+import {MatDividerModule,MatCardModule,MatButtonModule,MatListModule,MatToolbarModule, MatSidenavModule, MatIconModule, MatGridListModule, MatMenuModule, MatInputModule, MatSelectModule, MatRadioModule, MatStepperModule, MatProgressBarModule} from '@angular/material';
 import { NavComponent } from './nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { BrowserComponent } from './browser/browser.component';
@@ -36,7 +36,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatSelectModule,
     MatRadioModule,
     ReactiveFormsModule,
-    MatDividerModule
+    MatDividerModule,
+    MatStepperModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
