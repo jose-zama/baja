@@ -11,4 +11,5 @@ export class Equipment {
   image: string;
   location: string;
   currentInvestment: number;
+  pricePerUse: number;
 }
