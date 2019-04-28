@@ -1,0 +1,38 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Equipo para invertir</h1>
+
+  <mat-card class="card" *ngFor="let card of cards | async">
+    <mat-card-header>
+      <mat-card-title>
+        {{card.name}}
+      </mat-card-title>
+      <mat-card-subtitle>
+        {{card.model}}
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <mat-grid-list cols="4" rowHeight="3:2">
+        <mat-grid-tile>
+          <img src="{{card.image}}">
+        </mat-grid-tile>
+        <mat-grid-tile class="dashboard-card-content" colspan="3">
+          <section>
+            <strong>Marca </strong>{{card.manufacturer}}<br/>
+            <strong>Precio </strong>${{card.price}}<br/>
+            <strong>Tipo </strong>{{card.type}}<br/>
+            <strong>Ubicacion </strong>{{card.location}}<br/>
+            <strong>Retorno de inversion </strong>???<br/>
+          </section>
+
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+      <a mat-button routerLink="/invest/detail/{{card.id}}" >Invertir</a>
+    </mat-card-actions>
+  </mat-card>
+
+</div>
+
