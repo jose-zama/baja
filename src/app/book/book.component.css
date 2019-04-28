@@ -1,0 +1,32 @@
+.cooperate-form {
+  margin: 20px;
+}
+
+.mat-stepper-horizontal {
+  width: auto;
+  display: block;
+}
+
+.equipment-detail-description {
+  text-align: center;
+}
+
+.equipment-detail-description img {
+  max-width: 600px;
+}
+
+.cooperate-form form .form-controls {
+  text-align: right;
+}
+
+.cooperate-form-funding-progress {
+  margin: 10px 0;
+}
+
+.equipment-payment-info-card {
+  float: left;
+}
+
+.payment-form {
+  clear: left;
+}

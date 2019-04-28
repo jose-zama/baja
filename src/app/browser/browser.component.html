@@ -19,7 +19,7 @@
         <mat-grid-tile class="dashboard-card-content" colspan="3">
           <section>
             <strong>Marca </strong>{{card.manufacturer}}<br/>
-            <strong>Precio </strong>${{card.price}}<br/>
+            <strong>Precio </strong>{{card.price | currency }}<br/>
             <strong>Tipo </strong>{{card.type}}<br/>
             <strong>Ubicacion </strong>{{card.location}}<br/>
             <strong>Retorno de inversion </strong>???<br/>

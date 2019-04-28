@@ -12,6 +12,7 @@ import { BrowserComponent } from './browser/browser.component';
 import { CooperateFormComponent } from './cooperate-form/cooperate-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AvailableComponent } from './available/available.component';
+import { BookComponent } from './book/book.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AvailableComponent } from './available/available.component';
     BrowserComponent,
     CooperateFormComponent,
     AvailableComponent,
+    BookComponent,
   ],
   imports: [
     BrowserModule,
