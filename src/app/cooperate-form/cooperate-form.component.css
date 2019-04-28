@@ -22,3 +22,11 @@
 .cooperate-form-funding-progress {
     margin: 10px 0;
 }
+
+.equipment-payment-info-card {
+    float: left;    
+}
+
+.payment-form {
+    clear: left;
+}

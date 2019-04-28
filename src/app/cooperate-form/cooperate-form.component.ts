@@ -20,6 +20,7 @@ export class CooperateFormComponent implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  thirdFormGroup: FormGroup;
 
   constructor(
     private _formBuilder: FormBuilder,
@@ -33,8 +34,12 @@ export class CooperateFormComponent implements OnInit {
 
     this.firstFormGroup = this._formBuilder.group({
     });
+
     this.secondFormGroup = this._formBuilder.group({
       investment: [0, [Validators.min(1), Validators.max(this.equipment.price - this.equipment.currentInvestment)]]
+    });
+
+    this.thirdFormGroup = this._formBuilder.group({
     });
   }
 }
