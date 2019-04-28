@@ -11,6 +11,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { BrowserComponent } from './browser/browser.component';
 import { CooperateFormComponent } from './cooperate-form/cooperate-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AvailableComponent } from './available/available.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavComponent,
     BrowserComponent,
     CooperateFormComponent,
+    AvailableComponent,
   ],
   imports: [
     BrowserModule,
