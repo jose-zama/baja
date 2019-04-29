@@ -1,8 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartDataSets, ChartOptions, ChartType, Chart } from 'chart.js';
 import { Color, BaseChartDirective, Label } from 'ng2-charts';
-import * as pluginAnnotations from 'chartjs-plugin-annotation';
-import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 
 @Component({
   selector: 'app-statistics',
@@ -59,7 +57,7 @@ export class StatisticsComponent {
     legend: {
       position: 'top',
       labels: {
-        fontColor: 'white'
+        fontColor: '#333'
       }
     },
     plugins: {
@@ -75,7 +73,6 @@ export class StatisticsComponent {
   public pieChartData: number[] = [300, 400, 100];
   public pieChartType: ChartType = 'pie';
   public pieChartLegend = true;
-  public pieChartPlugins = [pluginDataLabels];
   public pieChartColors = [
     {
       backgroundColor: ['rgba(255,0,0,0.3)', 'rgba(0,255,0,0.3)', 'rgba(0,0,255,0.3)'],
@@ -87,6 +84,6 @@ export class StatisticsComponent {
   constructor() { }
 
   ngOnInit() {
-    Chart.defaults.global.defaultFontColor = 'white';
+    Chart.defaults.global.defaultFontColor = '#333';
   }
 }
