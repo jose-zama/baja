@@ -18,7 +18,7 @@
       </section>
       <form [formGroup]="firstFormGroup">
         <section class="form-controls">
-            <button mat-button matStepperNext>Invertir</button>
+            <button color="primary" mat-raised-button matStepperNext>Invertir</button>
         </section>
       </form>
     </mat-step>
@@ -46,7 +46,7 @@
         
         <section class="form-controls">
           <button mat-button matStepperPrevious>Previo</button>
-          <button mat-button matStepperNext>Pago</button>
+          <button color="primary" mat-raised-button matStepperNext>Pago</button>
         </section>
       </form>
 
@@ -54,11 +54,11 @@
     <mat-step [stepControl]="thirdFormGroup">
         <ng-template matStepLabel>Pago</ng-template>
         
-        <mat-card class="equipment-payment-info-card">
-            <img mat-card-avatar src="{{equipment.image}}">
+        <mat-card class="equipment-payment-info-card">            
             <mat-card-title>{{equipment.name}}</mat-card-title>
             <mat-card-subtitle>{{equipment.model}}</mat-card-subtitle>
-            <mat-card-content>                
+            <mat-card-content>         
+                <img mat-card-avatar src="{{equipment.image}}">       
                 <p>
                   <strong>Marca:</strong> {{equipment.manufacturer}}<br />
                   <strong>Tipo:</strong> {{equipment.type}}<br />
@@ -71,24 +71,30 @@
             <mat-card-title>Pago en línea</mat-card-title>
             <mat-card-subtitle>Tarjeta de crédito</mat-card-subtitle>
             <mat-card-content>
-                <h3>Pago: {{secondFormGroup.get('investment').value }}</h3>
+                <h3>Pago: {{secondFormGroup.get('investment').value | currency }}</h3>
                 Tarjeta con terminación: ************348
             </mat-card-content>
+            <mat-card-actions class="equipment-payment-info-card-actions">
+                <button color="primary" mat-flat-button (click)="pay()" [disabled]="isPayed">Confirmar</button>
+            </mat-card-actions>
         </mat-card>
 
         <form class="payment-form" [formGroup]="thirdFormGroup">
           <section class="form-controls">
-              <button mat-button matStepperNext>Continuar</button>
+            <button mat-button matStepperPrevious>Cancelar</button>
+            <button color="primary" mat-raised-button matStepperNext [disabled]="!isPayed">Continuar</button>
           </section>
         </form>
       </mat-step>
     <mat-step>
       <ng-template matStepLabel>Terminado</ng-template>
-      Felicidades, has contribuído para la compra de {{equipment.name}}
-      <section class="form-controls">
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
-      </section>
+      <section class="equipment-detail-description">
+          <h2>¡Felicidades! </h2>
+          <p>
+              Has contribuído para la compra de {{equipment.name}}, 
+              comenzaras a recibir pagos una vez que el equipo se instale y comienze a operar.
+          </p>
+      </section>      
     </mat-step>
   </mat-horizontal-stepper>
 </div>

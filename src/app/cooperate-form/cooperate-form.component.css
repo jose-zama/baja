@@ -25,8 +25,14 @@
 
 .equipment-payment-info-card {
     float: left;    
+    margin: 0 20px;
+    min-height: 200px
 }
 
 .payment-form {
     clear: left;
+}
+
+.equipment-payment-info-card-actions {
+    text-align: right;
 }
