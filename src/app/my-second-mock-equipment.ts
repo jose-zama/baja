@@ -7,6 +7,30 @@ import {
 
 export let equipmentList: Equipment[] = [
   {
+    id: 6,
+    name: "Gammacámara gamma de SPECT/TC",
+    model: "DiscoveryTM NM/CT 670 Pro",
+    manufacturer: "General Electric",
+    price: 25000000,
+    type: "Gammacámara",
+    image: "http://www3.gehealthcare.es/~/media/images/product/product-categories/nuclear-medicine/spect-ct%20scanners/discovery%20670%20new/banner%20image%201.jpg?h=578&la=es-ES&w=1466",
+    location: "Monterrey, Nuevo León",
+    currentInvestment: 15000000,
+    pricePerUse: 100000,
+  },
+  {
+    id: 5,
+    name: "Litrotriptor intracorpóreo electromecánico",
+    model: "LITHOBOX",
+    manufacturer: "LITHOBOX",
+    price: 7000765.95,
+    type: "Litotriptor",
+    image: "http://img.medicalexpo.es/images_me/photo-g/101132-13720833.jpg",
+    location: "León, Guanajuato",
+    currentInvestment: 120000,
+    pricePerUse: 20000,
+  },
+  {
     id: 4,
     name: "Gamma Knife Perfexion",
     model: "Selenia Dimensions System 9000 Package",
