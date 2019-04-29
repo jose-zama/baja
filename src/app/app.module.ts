@@ -13,6 +13,8 @@ import { CooperateFormComponent } from './cooperate-form/cooperate-form.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { AvailableComponent } from './available/available.component';
 import { BookComponent } from './book/book.component';
+import { StatisticsComponent } from './statistics/statistics.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { BookComponent } from './book/book.component';
     CooperateFormComponent,
     AvailableComponent,
     BookComponent,
+    StatisticsComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,8 @@ import { BookComponent } from './book/book.component';
     ReactiveFormsModule,
     MatDividerModule,
     MatStepperModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
