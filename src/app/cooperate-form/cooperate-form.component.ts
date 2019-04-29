@@ -47,7 +47,7 @@ export class CooperateFormComponent implements OnInit {
   }
 
   openBottomSheet() {
-    this.bottomSheet.open(BottomSheetOverviewExampleSheet);
+    this.bottomSheet.open(EasterEggOne);
   }
 
   pay(){
@@ -57,11 +57,11 @@ export class CooperateFormComponent implements OnInit {
 }
 
 @Component({
-  selector: 'bottom-sheet-overview-example-sheet',
-  templateUrl: 'bottom-sheet-overview-example-sheet.html',
+  selector: 'easter-egg-1',
+  templateUrl: 'easter-egg-1.html',
 })
-export class BottomSheetOverviewExampleSheet {
-  constructor(private bottomSheetRef: MatBottomSheetRef<BottomSheetOverviewExampleSheet>) {}
+export class EasterEggOne {
+  constructor(private bottomSheetRef: MatBottomSheetRef<EasterEggOne>) {}
 
   openLink(event: MouseEvent): void {
     this.bottomSheetRef.dismiss();

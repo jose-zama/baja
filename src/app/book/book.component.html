@@ -78,9 +78,9 @@
     <mat-step>
       <ng-template matStepLabel>Terminado</ng-template>
       <section class="equipment-detail-description">
-        <h2>Tu cita se registró con éxito!</h2>
+        <h2>¡Tu cita se registró con éxito!</h2>
         <p>
-          Recibirás un correo con la informacicón de tu cita.
+          <span (click)="openBottomSheet()">Recibirás</span> un correo con la información de tu cita.
         </p>
       </section>
     </mat-step>

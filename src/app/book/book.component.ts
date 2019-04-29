@@ -5,6 +5,8 @@ import {  ActivatedRoute } from "@angular/router";
 import { equipmentList } from '../my-second-mock-equipment';
 import { Equipment } from '../equipment';
 
+import {MatBottomSheet, MatBottomSheetRef} from '@angular/material';
+
 @Component({
   selector: 'app-book',
   templateUrl: './book.component.html',
@@ -26,7 +28,8 @@ export class BookComponent implements OnInit {
 
   constructor(
     private _formBuilder: FormBuilder,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private bottomSheet: MatBottomSheet
   ) {}
 
   ngOnInit() {
@@ -44,9 +47,25 @@ export class BookComponent implements OnInit {
     });
   }
 
+  openBottomSheet() {
+    this.bottomSheet.open(EasterEggTwo);
+  }
 
   pay(){
     console.warn("PAYMENT!")
     this.isPayed = true;
+  }
+}
+
+@Component({
+  selector: 'easter-egg-2',
+  templateUrl: 'easter-egg-2.html',
+})
+export class EasterEggTwo {
+  constructor(private bottomSheetRef: MatBottomSheetRef<EasterEggTwo>) {}
+
+  openLink(event: MouseEvent): void {
+    this.bottomSheetRef.dismiss();
+    event.preventDefault();
   }
 }
