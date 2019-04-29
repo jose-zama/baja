@@ -21,12 +21,13 @@ import {
   MatRadioModule,
   MatStepperModule,
   MatProgressBarModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatBottomSheetModule
 } from '@angular/material';
 import {NavComponent} from './nav/nav.component';
 import {LayoutModule} from '@angular/cdk/layout';
 import {BrowserComponent} from './browser/browser.component';
-import {CooperateFormComponent} from './cooperate-form/cooperate-form.component';
+import {CooperateFormComponent, BottomSheetOverviewExampleSheet} from './cooperate-form/cooperate-form.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {AvailableComponent} from './available/available.component';
 import {BookComponent} from './book/book.component';
@@ -34,18 +35,19 @@ import { StatisticsComponent } from './statistics/statistics.component';
 import { ChartsModule } from 'ng2-charts';
 import { HomeComponent } from './home/home.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     BrowserComponent,
     CooperateFormComponent,
+    BottomSheetOverviewExampleSheet,
     AvailableComponent,
     BookComponent,
     StatisticsComponent,
-    HomeComponent,
+    HomeComponent
   ],
+  entryComponents: [BottomSheetOverviewExampleSheet],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -68,7 +70,8 @@ import { HomeComponent } from './home/home.component';
     MatDatepickerModule,
     MatInputModule,
     MatNativeDateModule,
-    ChartsModule
+    ChartsModule,
+    MatBottomSheetModule
   ],
   providers: [],
   bootstrap: [AppComponent]
