@@ -5,6 +5,8 @@ import {  ActivatedRoute } from "@angular/router";
 import { equipmentList } from '../mock-equipment';
 import { Equipment } from '../equipment';
 
+import {MatBottomSheet, MatBottomSheetRef} from '@angular/material';
+
 @Component({
   selector: 'app-cooperate-form',
   templateUrl: './cooperate-form.component.html',
@@ -18,22 +20,20 @@ export class CooperateFormComponent implements OnInit {
   investment: number;
   isPayed: boolean = false;
 
-  isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
 
-
   constructor(
     private _formBuilder: FormBuilder,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private bottomSheet: MatBottomSheet
   ) {}
 
   ngOnInit() {
     this.selectedId  = +this.route.snapshot.paramMap.get('id');
     this.equipment = equipmentList.find( x => x.id == this.selectedId);
     this.alreadyInvestedPercent = (this.equipment.currentInvestment * 100) / this.equipment.price;
-
 
     this.firstFormGroup = this._formBuilder.group({
     });
@@ -46,8 +46,25 @@ export class CooperateFormComponent implements OnInit {
     });
   }
 
+  openBottomSheet() {
+    this.bottomSheet.open(BottomSheetOverviewExampleSheet);
+  }
+
   pay(){
     console.warn("PAYMENT!")
     this.isPayed = true;
+  }
+}
+
+@Component({
+  selector: 'bottom-sheet-overview-example-sheet',
+  templateUrl: 'bottom-sheet-overview-example-sheet.html',
+})
+export class BottomSheetOverviewExampleSheet {
+  constructor(private bottomSheetRef: MatBottomSheetRef<BottomSheetOverviewExampleSheet>) {}
+
+  openLink(event: MouseEvent): void {
+    this.bottomSheetRef.dismiss();
+    event.preventDefault();
   }
 }
