@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
-import { equipmentList } from '../mock-equipment';
+import { equipmentList } from '../my-second-mock-equipment';
 
 @Component({
   selector: 'app-available',

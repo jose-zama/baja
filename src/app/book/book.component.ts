@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import {  ActivatedRoute } from "@angular/router";
 
-import { equipmentList } from '../mock-equipment';
+import { equipmentList } from '../my-second-mock-equipment';
 import { Equipment } from '../equipment';
 
 @Component({
