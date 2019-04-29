@@ -1,0 +1,94 @@
+<div class="grid-container cooperate-form">
+
+  <h1 class="mat-h1">Equipo para invertir</h1>
+
+  <mat-horizontal-stepper [linear]="true" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <ng-template matStepLabel>{{equipment.name}}</ng-template>
+      <section class="equipment-detail-description">
+        <img src="{{equipment.image}}">
+        <h2>{{equipment.name}}</h2>
+        <small>{{equipment.model}}</small>
+        <p>
+          <strong>Marca:</strong> {{equipment.manufacturer}}<br />
+          <strong>Tipo:</strong> {{equipment.type}}<br />
+          <strong>Ubicacion:</strong> {{equipment.location}}<br />
+        </p>
+        <h3><strong>Costo por uso:</strong> {{equipment.pricePerUse | currency }}</h3>
+      </section>
+      <form [formGroup]="firstFormGroup">
+        <section class="form-controls">
+          <button mat-button matStepperNext>Invertir</button>
+        </section>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <ng-template matStepLabel>¡Involúcrate!</ng-template>
+      <section class="equipment-detail-description">
+        <h2>Necesitamos {{equipment.price - equipment.currentInvestment | currency }}  para llegar a la meta</h2>
+      </section>
+
+      <mat-progress-bar
+        class="cooperate-form-funding-progress"
+        color="primary"
+        mode="buffer"
+        value="{{alreadyInvestedPercent}}"
+        bufferValue="{{(alreadyInvestedPercent) + (secondFormGroup.get('investment').value * 100 / equipment.price )}}">
+      </mat-progress-bar>
+
+      Estimado de ganancia: {{( (secondFormGroup.get('investment').value * 100) / equipment.price) | number : '1.2-2' }} %
+
+      <form [formGroup]="secondFormGroup">
+        Estoy de acuerdo en participar con la comunidad para llevar éste beneficio a muchas personas con mi inversión de:
+        <mat-form-field>
+          <input matInput placeholder="Monto" type="number" formControlName="investment" required>
+        </mat-form-field>
+
+        <section class="form-controls">
+          <button mat-button matStepperPrevious>Previo</button>
+          <button mat-button matStepperNext>Pago</button>
+        </section>
+      </form>
+
+    </mat-step>
+    <mat-step [stepControl]="thirdFormGroup">
+      <ng-template matStepLabel>Pago</ng-template>
+
+      <mat-card class="equipment-payment-info-card">
+        <img mat-card-avatar src="{{equipment.image}}">
+        <mat-card-title>{{equipment.name}}</mat-card-title>
+        <mat-card-subtitle>{{equipment.model}}</mat-card-subtitle>
+        <mat-card-content>
+          <p>
+            <strong>Marca:</strong> {{equipment.manufacturer}}<br />
+            <strong>Tipo:</strong> {{equipment.type}}<br />
+            <strong>Ubicacion:</strong> {{equipment.location}}<br />
+          </p>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="equipment-payment-info-card">
+        <mat-card-title>Pago en línea</mat-card-title>
+        <mat-card-subtitle>Tarjeta de crédito</mat-card-subtitle>
+        <mat-card-content>
+          <h3>Pago: {{secondFormGroup.get('investment').value }}</h3>
+          Tarjeta con terminación: ************348
+        </mat-card-content>
+      </mat-card>
+
+      <form class="payment-form" [formGroup]="thirdFormGroup">
+        <section class="form-controls">
+          <button mat-button matStepperNext>Continuar</button>
+        </section>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Terminado</ng-template>
+      Felicidades, has contribuído para la compra de {{equipment.name}}
+      <section class="form-controls">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </section>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>
