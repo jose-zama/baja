@@ -5,7 +5,7 @@
       <mat-card class="dashboard-card">
         <mat-card-header>
           <mat-card-title>
-           Análisis realizados por mes          
+           Análisis realizados por mes
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
@@ -15,8 +15,7 @@
                 [options]="lineChartOptions"
                 [colors]="lineChartColors"
                 [legend]="lineChartLegend"
-                [chartType]="lineChartType"
-                [plugins]="lineChartPlugins">
+                [chartType]="lineChartType">
                 </canvas>
         </mat-card-content>
       </mat-card>
@@ -34,7 +33,6 @@
             [labels]="pieChartLabels"
             [chartType]="pieChartType"
             [options]="pieChartOptions"
-            [plugins]="pieChartPlugins"
             [colors]="pieChartColors"
             [legend]="pieChartLegend">
           </canvas>
