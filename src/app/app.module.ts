@@ -32,6 +32,8 @@ import {AvailableComponent} from './available/available.component';
 import {BookComponent} from './book/book.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { ChartsModule } from 'ng2-charts';
+import { HomeComponent } from './home/home.component';
+
 
 @NgModule({
   declarations: [
@@ -42,6 +44,7 @@ import { ChartsModule } from 'ng2-charts';
     AvailableComponent,
     BookComponent,
     StatisticsComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
